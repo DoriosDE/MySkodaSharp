@@ -54,7 +54,7 @@ namespace MySkodaSharp
             var vehicle = await EnsureVehicleExists(vin, GetVehiclesAsync, v => v.Vin);
             if (vehicle != null)
             {
-                return new VehicleProvider(_mySkodaApiClient, vin, CACHE);
+                return new VehicleProvider(_mySkodaApiClient, vehicle.Vin, CACHE);
             }
             return null;
         }
