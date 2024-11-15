@@ -11,11 +11,11 @@ namespace MySkodaSharp.CLI
         {
             var commandLine = new Arguments(args);
 
-            var user = commandLine["user"];
+            var email = commandLine["email"];
             var pass = commandLine["pass"];
             var vin = commandLine["vin"];
 
-            if (user == null || pass == null)
+            if (email == null || pass == null)
             {
                 Console.WriteLine("Missing -user or -pass argument!");
                 Console.ReadKey();
@@ -33,13 +33,13 @@ namespace MySkodaSharp.CLI
 
             try
             {
-                var mySkodaClient = serviceProvider.GetService<MySkodaClient>();
-                await mySkodaClient.InitializeAsync(user, pass);
+                var mySkoda = serviceProvider.GetService<MySkodaClient>();
 
-                var vehicles = await mySkodaClient.GetVehiclesAsync();
+                await mySkoda.InitializeAsync(email, pass);
 
-                var enyaqProvider = await mySkodaClient.CreateVehicleProviderAsync(vin);
-                var enyaqDetails = await enyaqProvider.GetVehicleAsync();
+                var vehicles = await mySkoda.GetGarageEntriesAsync();
+                var user = await mySkoda.GetUserAsync();
+                var info = await mySkoda.GetInfoAsync(vin);
             }
             catch (Exception ex)
             {

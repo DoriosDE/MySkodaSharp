@@ -1,0 +1,124 @@
+﻿namespace MySkodaSharp.Enums
+{
+    public enum BodyType
+    {
+        SUV,
+        SUV_COUPE,
+        COMBI,
+        LIFTBACK,
+        HATCHBACK
+    }
+
+    public enum CapabilityId
+    {
+        ACCESS,
+        AIR_CONDITIONING,
+        AIR_CONDITIONING_HEATING_SOURCE_AUXILIARY,
+        AIR_CONDITIONING_HEATING_SOURCE_ELECTRIC,
+        AIR_CONDITIONING_SAVE_AND_ACTIVATE,
+        AIR_CONDITIONING_SMART_SETTINGS,
+        AIR_CONDITIONING_TIMERS,
+        AUTOMATION,
+        AUXILIARY_HEATING,
+        AUXILIARY_HEATING_TEMPERATURE_SETTING,
+        AUXILIARY_HEATING_TIMERS,
+        BATTERY_CHARGING_CARE,
+        BATTERY_SUPPORT,
+        CAR_FEEDBACK,
+        CARE_AND_INSURANCE,
+        CHARGE_MODE_SELECTION,
+        CHARGING,
+        CHARGING_MEB,
+        CHARGING_MQB,
+        CHARGING_PROFILES,
+        CHARGING_STATIONS,
+        CUBIC,
+        DEALER_APPOINTMENT,
+        DEPARTURE_TIMERS,
+        DESTINATIONS,
+        DESTINATION_IMPORT,
+        DESTINATION_IMPORT_UPGRADABLE,
+        DIGICERT,
+        EMERGENCY_CALLING,
+        EV_ROUTE_PLANNING,
+        EXTENDED_CHARGING_SETTINGS,
+        FUEL_STATUS,
+        GEO_FENCE,
+        GUEST_USER_MANAGEMENT,
+        HONK_AND_FLASH,
+        ICE_VEHICLE_RTS,
+        LOYALTY_PROGRAM,
+        MAP_UPDATE,
+        MEASUREMENTS,
+        MISUSE_PROTECTION,
+        NEWS,
+        ONLINE_SPEECH_GPS,
+        PARKING_INFORMATION,
+        PARKING_POSITION,
+        PAY_TO_FUEL,
+        PAY_TO_PARK,
+        PLUG_AND_CHARGE,
+        POI_SEARCH,
+        POWERPASS_TARIFFS,
+        PREDICTIVE_WAKE_UP,
+        ROADSIDE_ASSISTANT,
+        ROUTE_IMPORT,
+        ROUTE_PLANNING_5_CHARGERS,
+        ROUTE_PLANNING_10_CHARGERS,
+        ROUTING,
+        SERVICE_PARTNER,
+        SPEED_ALERT,
+        STATE,
+        SUBSCRIPTIONS,
+        THEFT_WARNING,
+        TRAFFIC_INFORMATION,
+        TRIP_STATISTICS,
+        VEHICLE_HEALTH_INSPECTION,
+        VEHICLE_HEALTH_WARNINGS,
+        VEHICLE_HEALTH_WARNINGS_WITH_WAKE_UP,
+        VEHICLE_SERVICES_BACKUPS,
+        VEHICLE_WAKE_UP,
+        VEHICLE_WAKE_UP_TRIGGER,
+        WARNING_LIGHTS,
+        WEB_RADIO,
+        WINDOW_HEATING
+    }
+
+    public enum CapabilityStatus
+    {
+        DEACTIVATED_BY_ACTIVE_VEHICLE_USER,
+        DISABLED_BY_USER,
+        FRONTEND_SWITCHED_OFF,
+        INITIALLY_DISABLED,
+        INSUFFICIENT_BATTERY_LEVEL,
+        LICENSE_EXPIRED,
+        LICENSE_MISSING,
+        LOCATION_DATA_DISABLED,
+        INSUFFICIENT_RIGHTS
+    }
+    public enum ErrorTypeInfo
+    {
+        MISSING_RENDER
+    }
+
+    public enum RenderType
+    {
+        REAL
+    }
+
+    public enum VehicleState
+    {
+        ACTIVATED,
+        GUEST_USER
+    }
+    public enum ViewType
+    {
+        UNMODIFIED_EXTERIOR_SIDE,
+        UNMODIFIED_EXTERIOR_FRONT,
+        HOME,
+        CHARGING_LIGHT,
+        CHARGING_DARK,
+        PLUGGED_IN_DARK,
+        PLUGGED_IN_LIGHT
+    }
+}

@@ -5,17 +5,15 @@ namespace MySkodaSharp.CLI
 {
     internal class Arguments
     {
-        // Variables
         private StringDictionary Parameters;
 
-        // Constructor
         public Arguments(string[] Args)
         {
-            Parameters = new StringDictionary();
-            Regex Spliter = new Regex(@"^-{1,2}|^/|=|:",
+            Parameters = new();
+            Regex Spliter = new(@"^-{1,2}|^/|=|:",
                 RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
-            Regex Remover = new Regex(@"^['""]?(.*?)['""]?$",
+            Regex Remover = new(@"^['""]?(.*?)['""]?$",
                 RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
             string Parameter = null;
@@ -94,13 +92,11 @@ namespace MySkodaSharp.CLI
             }
         }
 
-        // Retrieve a parameter value if it exists
-        // (overriding C# indexer property)
         public string this[string Param]
         {
             get
             {
-                return (Parameters[Param]);
+                return Parameters[Param];
             }
         }
     }

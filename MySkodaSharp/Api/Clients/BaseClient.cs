@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using MySkodaSharp.Api.Models;
+using MySkodaSharp.Api.Utils;
+using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Text;
@@ -14,7 +16,7 @@ namespace MySkodaSharp.Api.Clients
 
         protected BaseClient(HttpClient client = null)
         {
-            Client = client ?? new HttpClient();
+            Client = client ?? new();
         }
 
         protected async Task<T> GetAsync<T>(string path) where T : class
@@ -42,6 +44,14 @@ namespace MySkodaSharp.Api.Clients
             }
 
             return JsonConvert.DeserializeObject<T>(respContent);
+        }
+
+        protected async Task<GetEndpointResult<T>> GetAsync<T>(string url, bool anonymize, Func<T, T> anonymizationFn)
+        {
+            var raw = JsonProcessor.ProcessJson(await GetAsync<string>(url), anonymize, anonymizationFn);
+            var result = JsonConvert.DeserializeObject<T>(raw);
+
+            return new GetEndpointResult<T>(Anonymizer.AnonymizeUrl(url), raw, result);
         }
 
         protected async Task<T> PostAsync<T>(string path, object body, bool isRawBody = false) where T : class
